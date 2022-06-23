@@ -1,0 +1,694 @@
+{
+  "questions": [
+    {
+      "type": "Misc",
+      "description": "Är {1} längre än en hobbit?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad föredrar du?",
+      "choices": ["SMS", "Snapchat"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Din partner kan endast prata detta språk, vilket?",
+      "choices": ["Engelska", "Norska"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad föredrar du?",
+      "choices": ["Instagram", "TikTok"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Var bor du helst?",
+      "choices": ["Härnösand", "Vemdalen"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Hamburgare eller pizza?",
+      "choices": ["Hamburgare", "Pizza"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad hade du helst döpt ditt barn till?",
+      "choices": ["Donald", "Saddam"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Kontorsjobb?",
+      "choices": ["Ja, tack", "Nej, aldrig"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilken öl föredrar du?",
+      "choices": ["Norrlands", "Mariestad"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bästa filmerna?",
+      "choices": ["Harry Potter", "Sagan om ringen"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilket vin?",
+      "choices": ["Vitt", "Rött"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bästa serien?",
+      "choices": ["The Wire", "Game of Thrones"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bästa serien?",
+      "choices": ["På Spåret", "SKAM"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilken genre är bäst?",
+      "choices": ["BDSM", "Hentai"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "En fylla på endast ...",
+      "choices": ["Rödvin", "Vodkagroggar"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilken filmgenre föredrar du?",
+      "choices": ["Komedi", "Drama"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vem skulle du helst ta en öl med?",
+      "choices": ["Zlatan", "Håkan Juholt"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilken dag är roligast?",
+      "choices": ["Midsommar", "Julafton"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad kollar du helst på en lördagkväll?",
+      "choices": ["Anime", "Romantiska komedier"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad kollar du helst på en lördagkväll?",
+      "choices": ["Paradise Hotel", "Andra världskriget i färg"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "En fylla på endast ...",
+      "choices": ["Fernet", "Tequila"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Skulle {1} och {2} bilda ett bra par?",
+      "choices": ["Absolut", "Aldrig"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Skulle {1} och {2} vara bra affärspartners?",
+      "choices": ["Absolut", "Aldrig"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Ebba Busch eller Annie Lööf?",
+      "choices": ["Ebba", "Annie"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bättre serie?",
+      "choices": ["Grey's Anatomy", "House"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bättre fotbollsspelare?",
+      "choices": ["Messi", "C. Ronaldo"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bättre fotbollsspelare?",
+      "choices": ["Isak", "Kulusevski"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Roligast på fest?",
+      "choices": ["Beer Pong", "Ring of Fire"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Godaste drinken?",
+      "choices": ["Gin & Tonic", "Mojito"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Utekväll spenderas helst ...",
+      "choices": ["På dansgolvet", "I baren"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bröst eller rumpa?",
+      "choices": ["Bröst", "Rumpa"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilket operativsystem?",
+      "choices": ["iOS", "Android"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vem lyssnar du helst på?",
+      "choices": ["Ed Sheeran", "Eminem"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vem lyssnar du helst på?",
+      "choices": ["Frank Ocean", "Hov1"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vem lyssnar du helst på?",
+      "choices": ["Veronica Maggio", "Ariana Grande"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vem lyssnar du helst på?",
+      "choices": ["Håkan Hellström", "Laleh"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Bättre sport?",
+      "choices": ["Fotboll", "Hockey"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad reser du helst en lång sträcka med?",
+      "choices": ["Bil", "Tåg"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad äter du helst?",
+      "choices": ["Tacos", "Sushi"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Typ av semester?",
+      "choices": ["Solresa", "Stadsresa"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vilken typ av bostad?",
+      "choices": ["Lägenhet", "Villa"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad hade du helst haft som husdjur?",
+      "choices": ["Orm", "Fågel"],
+      "reward": 2
+    },
+    {
+      "type": "Misc",
+      "description": "Vad hade du helst haft som husdjur?",
+      "choices": ["Spindel", "Råtta"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Kan {1} göra 20 armhävningar?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Onanerar {1} mer än tre gånger i veckan?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Har {1} haft en crush på någon i rummet?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Skulle {1} ta notan på första dejten?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Kommer {1} bli för full ikväll?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Har {1} någonsin funderat på en plastikoperation?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Är {1} nöjd med sitt jobb?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "{1} föredrar människor med ... ursprung.",
+      "choices": ["Asiatiskt", "Latinamerikanskt"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "{1} har läst en bok detta år.",
+      "choices": ["Sant", "Falskt"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "{1} beställer 20-pack nuggets från McDonalds.",
+      "choices": ["Sant", "Falskt"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Föredrar {1} intelligens eller utseende?",
+      "choices": ["Intelligens", "Utseende"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Har {1} onanerat på en offentlig plats?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Skulle {1} äta avföring för 20,000 kronor?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Skulle {1} ligga med någon av samma kön för 100,000 kronor?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Vad skulle {1} helst vara?",
+      "choices": ["Döv", "Rullstolsbunden"],
+      "reward": 2
+    },
+    {
+      "type": "Challenge",
+      "description": "Vem skulle du lita mest på gällande en investering?",
+      "choices": ["{1}", "Dagens horoskop"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vad är störst?",
+      "choices": ["{2}s rumpa", "{1}s ego"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vad är störst?",
+      "choices": ["{2}s biceps", "{1}s framtida skulder"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vad är störst?",
+      "choices": ["{2}s porrberoende", "{1}s garderob"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem snarkar högst?",
+      "choices": ["{2}", "{1}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem kommer leva längst?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vems barn kommer bli fotbollsproffs?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vems barn kommer bli nobelpristagare?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vems barn kommer bli mest bortskämda?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vems barn kommer bli jobbigast?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem kommer bli den bästa föräldern?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är starkast, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är snabbast, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är smartast, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest händig, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest konstig, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest känslosam, {1} eller {2}?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem skulle vinna i en fight?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem skulle vinna i pingis?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem skulle vinna i frågesport?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är självsäkrast?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest konflikträdd?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest amerikansk?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem målar bäst?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem sjunger bäst?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem blir snabbast full?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är sämst på att laga mat?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem har bäst tålamod?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Den bästa gamern?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vildast i sängen?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Lataste människan?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är nördigast?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem behöver dricka mer?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem behöver börja träna?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är bäst på kubb?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest svensk?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest vänster?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest höger?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem skulle du helst ha med dig på en öde ö?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem är mest vältränad?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Sämst förlorare?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Bäst på att ragga?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Om min bil går sönder så vill jag att ... lagar den.",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "VS",
+      "description": "Vem skulle mest troligen köpa något av en telefonförsäljare?",
+      "choices": ["{1}", "{2}"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["USA", "Japan"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Mallorca", "Kreta"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Göteborg", "Stockholm"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Åre", "Smögen"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Spanien", "Italien"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Danmark", "Norge"],
+      "reward": 2
+    },
+    {
+      "type": "Travel",
+      "description": "Var hade du helst rest?",
+      "choices": ["Australien", "Nya Zeeland"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Marrakech är huvudstaden i Marocko?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Skotlands nationaldjur är ...",
+      "choices": ["Enhörning", "Hund"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Har Draco Malfoy några syskon?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Är Hillary Clinton och Celine Dion släkt?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Har Kungen i en kortlek mustasch?",
+      "choices": ["Ja", "Nej"],
+      "reward": 2
+    },
+    {
+      "type": "Quiz",
+      "description": "Michael Jackson och Nicolas Cage har gift sig med samma kvinna.",
+      "choices": ["Sant", "Falskt"],
+      "reward": 2
+    }
+  ]
+}
