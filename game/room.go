@@ -3,7 +3,6 @@ package game
 import (
 	"encoding/json"
 	"math/rand"
-	s "strings"
 	"time"
 
 	"github.com/rs/zerolog/log"
@@ -99,44 +98,6 @@ func (r *Room) shuffleQuestions() {
 	}
 }
 
-func (r *Room) parseQuestions() {
-	parsedQuestions := []*Question{}
-
-	playerNames := []string{}
-	for player := range r.Players {
-		playerNames = append(playerNames, player.Name)
-	}
-
-	rand.Seed(time.Now().UnixNano())
-	for _, question := range r.Questions {
-		player1 := playerNames[rand.Intn(len(playerNames))]
-		player2 := playerNames[rand.Intn(len(playerNames))]
-		for player2 == player1 {
-			player2 = playerNames[rand.Intn(len(playerNames))]
-		}
-
-		// TODO: Fix so that "{1/2}s" don't become e.g. Pontuss
-		desc := s.ReplaceAll(question.Description, "{1}", player1)
-		desc = s.ReplaceAll(desc, "{2}", player2)
-		for i, choice := range question.Choices {
-			choice = s.ReplaceAll(choice, "{1}", player1)
-			choice = s.ReplaceAll(choice, "{2}", player2)
-			question.Choices[i] = choice
-		}
-
-		parsedQuestion := &Question{
-			Type:        question.Type,
-			Description: desc,
-			Choices:     question.Choices,
-			Answers:     question.Answers,
-			Reward:      question.Reward,
-		}
-		parsedQuestions = append(parsedQuestions, parsedQuestion)
-	}
-
-	r.Questions = parsedQuestions
-}
-
 func (r *Room) NextQuestion() *Question {
 	if r.CurrentQuestion >= len(r.Questions)-1 {
 		return nil
@@ -166,7 +127,6 @@ func (r *Room) BroadcastRoomState() {
 }
 
 func (r *Room) StartGame() {
-	r.parseQuestions()
 	r.shuffleQuestions()
 	r.selectNQuestions(r.NQuestions)
 	r.Scene = 1

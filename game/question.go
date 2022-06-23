@@ -33,18 +33,20 @@ func (q *Question) ToJSONQuestion() *JSONQuestion {
 		incorrectPlayerNames[i] = player.Name
 	}
 	answers := make([]string, len(q.Answers))
-	for p, i := range q.Answers {
-		answers[i] = p.Name
+	for p := range q.Answers {
+		answers = append(answers, p.Name)
 	}
 
 	return &JSONQuestion{Type: q.Type, Description: q.Description, Choices: q.Choices, CorrectChoice: q.CorrectChoice, Reward: q.Reward, Answers: answers, CorrectPlayers: correctPlayerNames, IncorrectPlayers: incorrectPlayerNames}
 }
 
 func (q *Question) AwardScores() {
+	//log.Debug().Msgf("Awarding scores for answer %s", q.CorrectChoice)
+
 	answerIndex := indexOfAnswer(q)
 	for player, vote := range q.Answers {
 		if vote == answerIndex {
-			player.Score += q.Reward
+			player.Score += q.Reward * 3
 			q.CorrectPlayers = append(q.CorrectPlayers, player)
 		} else {
 			q.IncorrectPlayers = append(q.IncorrectPlayers, player)
