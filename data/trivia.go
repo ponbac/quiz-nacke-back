@@ -14,7 +14,8 @@ import (
 type QuestionType int
 
 const (
-	MultipleChoice QuestionType = iota
+	None QuestionType = iota
+	MultipleChoice
 	FreeText
 )
 
@@ -89,10 +90,24 @@ func (q *ProviderQuestion) ToQuestion() *game.Question {
 		allChoices[i], allChoices[j] = allChoices[j], allChoices[i]
 	}
 
+	// calculate reward
+	reward := 1
+	if q.Difficulty == "medium" {
+		reward = 2
+	} else if q.Difficulty == "hard" {
+		reward = 3
+	}
+	if q.Type == "boolean" {
+		reward -= 1
+		if reward < 1 {
+			reward = 1
+		}
+	}
+
 	return &game.Question{
 		Category:      q.Category,
 		Type:          q.Type,
-		Reward:        2,
+		Reward:        reward,
 		Description:   q.Question,
 		CorrectChoice: q.CorrectAnswer,
 		Choices:       allChoices,
