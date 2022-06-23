@@ -2,7 +2,9 @@ package data
 
 import (
 	"encoding/json"
+	"html"
 	"io/ioutil"
+	"math/rand"
 	"net/http"
 
 	"github.com/ponbac/majority-wins/game"
@@ -73,7 +75,19 @@ func (p *Provider) FetchQuestions(client http.Client) []*game.Question {
 }
 
 func (q *ProviderQuestion) ToQuestion() *game.Question {
+	// html unescape question and choices
+	q.Question = html.UnescapeString(q.Question)
+	q.CorrectAnswer = html.UnescapeString(q.CorrectAnswer)
+	for i, incorrectAnswer := range q.IncorrectAnswers {
+		q.IncorrectAnswers[i] = html.UnescapeString(incorrectAnswer)
+	}
+
+	// concat and shuffle choices
 	allChoices := append(q.IncorrectAnswers, q.CorrectAnswer)
+	for i := len(allChoices) - 1; i > 0; i-- {
+		j := rand.Intn(i + 1)
+		allChoices[i], allChoices[j] = allChoices[j], allChoices[i]
+	}
 
 	return &game.Question{
 		Category:      q.Category,

@@ -1,51 +1,62 @@
 package game
 
 type Question struct {
-	Type          string
-	Category      string
-	Description   string
-	Choices       []string
-	CorrectChoice string
-	Answers       map[*Player]int
-	Reward        int
+	Type             string
+	Category         string
+	Description      string
+	Choices          []string
+	CorrectChoice    string
+	Answers          map[*Player]int
+	Reward           int
+	CorrectPlayers   []*Player
+	IncorrectPlayers []*Player
 }
 
 type JSONQuestion struct {
-	Type          string   `json:"type"`
-	Description   string   `json:"description"`
-	Choices       []string `json:"choices"`
-	CorrectChoice string   `json:"correct_choice"`
-	Reward        int      `json:"reward"`
+	Type             string   `json:"type"`
+	Description      string   `json:"description"`
+	Choices          []string `json:"choices"`
+	CorrectChoice    string   `json:"correct_choice"`
+	Reward           int      `json:"reward"`
+	Answers          []string `json:"answers"`
+	CorrectPlayers   []string `json:"correct_players"`
+	IncorrectPlayers []string `json:"incorrect_players"`
 }
 
 func (q *Question) ToJSONQuestion() *JSONQuestion {
-	jsonQuestion := &JSONQuestion{Type: q.Type, Description: q.Description, Choices: q.Choices, CorrectChoice: q.CorrectChoice, Reward: q.Reward}
+	correctPlayerNames := make([]string, len(q.CorrectPlayers))
+	for i, player := range q.CorrectPlayers {
+		correctPlayerNames[i] = player.Name
+	}
+	incorrectPlayerNames := make([]string, len(q.IncorrectPlayers))
+	for i, player := range q.IncorrectPlayers {
+		incorrectPlayerNames[i] = player.Name
+	}
+	answers := make([]string, len(q.Answers))
+	for p, i := range q.Answers {
+		answers[i] = p.Name
+	}
 
-	return jsonQuestion
+	return &JSONQuestion{Type: q.Type, Description: q.Description, Choices: q.Choices, CorrectChoice: q.CorrectChoice, Reward: q.Reward, Answers: answers, CorrectPlayers: correctPlayerNames, IncorrectPlayers: incorrectPlayerNames}
 }
 
 func (q *Question) AwardScores() {
-	oneVoters := []*Player{}
-	twoVoters := []*Player{}
+	answerIndex := indexOfAnswer(q)
 	for player, vote := range q.Answers {
-		if vote == 1 {
-			oneVoters = append(oneVoters, player)
-		} else if vote == 2 {
-			twoVoters = append(twoVoters, player)
+		if vote == answerIndex {
+			player.Score += q.Reward
+			q.CorrectPlayers = append(q.CorrectPlayers, player)
+		} else {
+			q.IncorrectPlayers = append(q.IncorrectPlayers, player)
 		}
 	}
-	if len(oneVoters) < len(twoVoters) {
-		for _, player := range oneVoters {
-			player.Score += q.Reward
-		}
-	} else if len(oneVoters) > len(twoVoters) {
-		for _, player := range twoVoters {
-			player.Score += q.Reward
-		}
-		// Tie
-	} else {
-		for player := range q.Answers {
-			player.Score += q.Reward / 2
+}
+
+func indexOfAnswer(q *Question) int {
+	for i, choice := range q.Choices {
+		if choice == q.CorrectChoice {
+			return i
 		}
 	}
+	return -1
 }
