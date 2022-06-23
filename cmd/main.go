@@ -105,7 +105,7 @@ func main() {
 func fetchOpenTDBQuestions() []*game.Question {
 	openTdb := &data.Provider{
 		Name: "OpenTDB",
-		Path: "https://opentdb.com/api.php?amount=15&category=9&type=multiple",
+		Path: "https://opentdb.com/api.php?amount=200&category=9&type=multiple",
 		Type: data.MultipleChoice,
 		Key:  "",
 	}
