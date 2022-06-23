@@ -46,7 +46,7 @@ func (q *Question) AwardScores() {
 	answerIndex := indexOfAnswer(q)
 	for player, vote := range q.Answers {
 		if vote == answerIndex {
-			player.Score += q.Reward * 3
+			player.Score += q.Reward * 2
 			q.CorrectPlayers = append(q.CorrectPlayers, player)
 		} else {
 			q.IncorrectPlayers = append(q.IncorrectPlayers, player)
