@@ -12,36 +12,34 @@ import (
 	"github.com/rs/zerolog/log"
 )
 
-type QuestionType int
+type QuestionProvider interface {
+	FetchQuestions(client http.Client) []*game.Question
+}
 
-const (
-	None QuestionType = iota
-	MultipleChoice
-	FreeText
-)
-
-type Provider struct {
+type TTAProvider struct {
 	Name string
 	Path string
 	Type QuestionType
 	Key  string
 }
 
-type ProviderResponse struct {
-	ResponseCode int `json:"response_code"`
-	Results      []*ProviderQuestion
+var TtaProvider = &TTAProvider{
+	Name: "Trivia",
+	Path: "https://the-trivia-api.com/api/questions?limit=20",
+	Type: None,
+	Key:  "Trivia",
 }
 
-type ProviderQuestion struct {
+type ttaQuestion struct {
 	Category         string   `json:"category"`
 	Type             string   `json:"type"`
 	Difficulty       string   `json:"difficulty"`
 	Question         string   `json:"question"`
-	CorrectAnswer    string   `json:"correct_answer"`
-	IncorrectAnswers []string `json:"incorrect_answers"`
+	CorrectAnswer    string   `json:"correctAnswer"`
+	IncorrectAnswers []string `json:"incorrectAnswers"`
 }
 
-func (p *Provider) FetchQuestions() []*game.Question {
+func (p *TTAProvider) FetchQuestions() []*game.Question {
 	// Make request
 	c := http.Client{Timeout: time.Second * 10}
 	resp, err := c.Get(p.Path)
@@ -57,27 +55,23 @@ func (p *Provider) FetchQuestions() []*game.Question {
 	}
 
 	// Parse response to object
-	var pResponse ProviderResponse
-	err = json.Unmarshal(bodyBytes, &pResponse)
+	var pQuestions []*ttaQuestion
+	err = json.Unmarshal(bodyBytes, &pQuestions)
 	if err != nil {
 		log.Error().Err(err)
 	}
 
-	// Extract questions
-	var pQuestions []*ProviderQuestion
-	pQuestions = append(pQuestions, pResponse.Results...)
-
 	// Convert to game.Question
 	var questions []*game.Question
 	for _, pQuestion := range pQuestions {
-		questions = append(questions, pQuestion.ToQuestion())
+		questions = append(questions, pQuestion.toQuestion())
 	}
 
 	log.Debug().Msgf("Fetched %d questions from %s", len(questions), p.Name)
 	return questions
 }
 
-func (q *ProviderQuestion) ToQuestion() *game.Question {
+func (q *ttaQuestion) toQuestion() *game.Question {
 	// html unescape question and choices
 	q.Question = html.UnescapeString(q.Question)
 	q.CorrectAnswer = html.UnescapeString(q.CorrectAnswer)
@@ -117,19 +111,3 @@ func (q *ProviderQuestion) ToQuestion() *game.Question {
 		Answers:       make(map[*game.Player]int),
 	}
 }
-
-// func main() {
-// 	openTdb := &Provider{
-// 		Name: "OpenTDB",
-// 		Path: "https://opentdb.com/api.php?amount=10&category=9&type=multiple",
-// 		Type: MultipleChoice,
-// 		Key:  "",
-// 	}
-
-// 	c := http.Client{Timeout: time.Second * 10}
-// 	questions := openTdb.FetchQuestions(c)
-
-// 	for _, question := range questions {
-// 		fmt.Println(question)
-// 	}
-// }

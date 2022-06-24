@@ -30,6 +30,7 @@ func createRoom(c echo.Context) error {
 	room := game.NewRoom(roomID)
 	rooms[roomID] = room
 	room.Questions = fetchOpenTDBQuestions()
+	room.Questions = append(room.Questions, fetchTTAQuestions()...)
 	nQuestions := c.QueryParam("questions")
 	if nQuestions != "" {
 		n, err := strconv.Atoi(nQuestions)
@@ -105,14 +106,16 @@ func main() {
 func fetchOpenTDBQuestions() []*game.Question {
 	openTdb := &data.Provider{
 		Name: "OpenTDB",
-		Path: "https://opentdb.com/api.php?amount=200",
+		Path: "https://opentdb.com/api.php?amount=20",
 		Type: data.None,
 		Key:  "",
 	}
 
-	c := http.Client{Timeout: time.Second * 10}
+	return openTdb.FetchQuestions()
+}
 
-	return openTdb.FetchQuestions(c)
+func fetchTTAQuestions() []*game.Question {
+	return data.TtaProvider.FetchQuestions()
 }
 
 // TODO: This does not work?
